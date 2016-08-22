@@ -1,6 +1,5 @@
 package edu.sharif.ce.notifier;
 
-import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -12,8 +11,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import edu.sharif.ce.notifier.dummy.DummyContent;
+
 public class CoursesActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, CourseFragment.OnListFragmentInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,9 +37,8 @@ public class CoursesActivity extends AppCompatActivity
     }
 
     private void addFragment() {
-        Fragment myf = null;
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        transaction.add(R.id.main_fragment, myf);
+        transaction.add(R.id.main_fragment, CourseFragment.newInstance());
         transaction.commit();
     }
 
@@ -97,5 +97,10 @@ public class CoursesActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onListFragmentInteraction(DummyContent.DummyItem item) {
+
     }
 }
