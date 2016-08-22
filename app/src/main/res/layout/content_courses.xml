@@ -13,6 +13,7 @@
     tools:showIn="@layout/app_bar_courses">
 
     <FrameLayout
+        android:id="@+id/main_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </RelativeLayout>
