@@ -1,4 +1,4 @@
-package edu.sharif.ce.notifier;
+package edu.sharif.ce.notifier.courses;
 
 import android.app.Fragment;
 import android.content.Context;
@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import edu.sharif.ce.notifier.R;
 import edu.sharif.ce.notifier.dummy.DummyContent;
 import edu.sharif.ce.notifier.dummy.DummyContent.DummyItem;
 

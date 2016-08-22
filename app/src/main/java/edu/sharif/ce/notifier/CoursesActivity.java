@@ -8,13 +8,22 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.List;
+
+import edu.sharif.ce.notifier.courses.Course;
+import edu.sharif.ce.notifier.courses.CourseFragment;
+import edu.sharif.ce.notifier.courses.CourseGetter;
+import edu.sharif.ce.notifier.courses.DataSetUpdatable;
 import edu.sharif.ce.notifier.dummy.DummyContent;
 
 public class CoursesActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, CourseFragment.OnListFragmentInteractionListener {
+        implements NavigationView.OnNavigationItemSelectedListener,
+        CourseFragment.OnListFragmentInteractionListener,
+        DataSetUpdatable<List<Course>> {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +43,11 @@ public class CoursesActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         addFragment();
+        testDownload();
+    }
+
+    private void testDownload() {
+        new CourseGetter(this).download();
     }
 
     private void addFragment() {
@@ -102,5 +116,11 @@ public class CoursesActivity extends AppCompatActivity
     @Override
     public void onListFragmentInteraction(DummyContent.DummyItem item) {
 
+    }
+
+    @Override
+    public void updateDataSet(List<Course> data) {
+        for (Course course : data)
+            Log.d("Mahshad", "" + course);
     }
 }

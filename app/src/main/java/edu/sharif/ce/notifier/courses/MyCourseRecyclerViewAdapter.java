@@ -1,4 +1,4 @@
-package edu.sharif.ce.notifier;
+package edu.sharif.ce.notifier.courses;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,7 +8,8 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import edu.sharif.ce.notifier.CourseFragment.OnListFragmentInteractionListener;
+import edu.sharif.ce.notifier.courses.CourseFragment.OnListFragmentInteractionListener;
+import edu.sharif.ce.notifier.R;
 import edu.sharif.ce.notifier.dummy.DummyContent.DummyItem;
 
 /**
