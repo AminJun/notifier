@@ -11,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import edu.sharif.ce.notifier.courses.CourseFragment;
 import edu.sharif.ce.notifier.dummy.DummyContent;
 
 public class CoursesActivity extends AppCompatActivity
